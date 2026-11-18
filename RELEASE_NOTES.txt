@@ -1,0 +1,9 @@
+PathSnap source release for team review
+
+Run from the extracted project root. See README.md and docs/BACKEND_HANDOFF.md.
+Original train/student ZIPs and private evaluator ZIP must be supplied separately.
+No raw/processed/evaluator input data, virtual environment, credentials or runtime tokens are included.
+The frozen inference source hashes and final model are preserved.
+Do not refit on evaluator outcomes. Only load trusted joblib artifacts.
+Publication destination: https://github.com/pragyas0207/Pathsnap .
+Physical two-laptop rehearsal, receiving-terminal screenshot and team details remain team tasks.

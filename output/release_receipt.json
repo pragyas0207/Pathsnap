@@ -1,0 +1,19 @@
+{
+  "packages": [
+    {
+      "file": "output/PathSnap_frontend_laptop2.zip",
+      "bytes": 60254,
+      "sha256": "62bfa43f3fc5c82e0a59ecf6931f2c3f0c8f6d53ca414b18a754a1921c5b936e",
+      "members": 14
+    },
+    {
+      "file": "output/PathSnap_source_release.zip",
+      "bytes": 12939010,
+      "sha256": "1ba2f4bc1a32caf7262f211b51c3ccfb62a68988dfad527942331abeb3e5da0c",
+      "members": 130
+    }
+  ],
+  "backend_url_at_packaging": "http://10.1.24.198:8766",
+  "physical_second_laptop_verified": false,
+  "raw_evaluator_inputs_included": false
+}

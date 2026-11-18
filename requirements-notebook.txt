@@ -1,0 +1,6 @@
+# Optional dependencies for the presentation notebook; ML dependencies stay separate.
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.30.1
+nbconvert==7.16.6
+notebook==7.4.7

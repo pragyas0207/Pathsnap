@@ -1,0 +1,516 @@
+{
+  "scope": "local loopback HTTP; not a physical two-laptop demo",
+  "partition": "student_test",
+  "results": [
+    {
+      "trip_id": "00000000",
+      "http_status": 200,
+      "request_id": "6a094cb9df364ac78e49d1d816bb9e58",
+      "observations": 2503,
+      "elapsed_http_and_map_seconds": 3.226701100007631,
+      "timing": {
+        "features_seconds": 0.05528490000870079,
+        "classifier_seconds": 0.16018729994539171,
+        "decoder_seconds": 0.6039562999503687,
+        "prediction_seconds": 0.8194284999044612,
+        "server_processing_seconds": 3.1920985999749973
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 2503,
+          "n_reference_aligned": 2503,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9244906112664802,
+          "candidate_miss_rate_proxy": 0.001997602876548142,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9512390087929656,
+          "adjacency_pairs": 2502,
+          "arc_set_precision": 0.7198275862068966,
+          "arc_set_recall": 0.9329608938547486,
+          "arc_set_f1": 0.8126520681265206,
+          "sampled_arc_edit_similarity": 0.4490358126721763,
+          "sampled_arc_count": 363,
+          "reference_arc_count": 179
+        },
+        "hmm": {
+          "n_observations": 2503,
+          "n_reference_aligned": 2503,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9456652017578905,
+          "candidate_miss_rate_proxy": 0.001997602876548142,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9900079936051159,
+          "adjacency_pairs": 2502,
+          "arc_set_precision": 0.8711340206185567,
+          "arc_set_recall": 0.9441340782122905,
+          "arc_set_f1": 0.906166219839142,
+          "sampled_arc_edit_similarity": 0.7454545454545455,
+          "sampled_arc_count": 220,
+          "reference_arc_count": 179
+        }
+      },
+      "unmatched": 0,
+      "resets": 3
+    },
+    {
+      "trip_id": "00000007",
+      "http_status": 200,
+      "request_id": "283af8721d9d4c5885efcbf49dd092bc",
+      "observations": 1354,
+      "elapsed_http_and_map_seconds": 1.6841609999537468,
+      "timing": {
+        "features_seconds": 0.018351899925619364,
+        "classifier_seconds": 0.057503300020471215,
+        "decoder_seconds": 0.3060002999845892,
+        "prediction_seconds": 0.3818554999306798,
+        "server_processing_seconds": 1.6460614000679925
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1354,
+          "n_reference_aligned": 1354,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8988183161004432,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9933481152993349,
+          "adjacency_pairs": 1353,
+          "arc_set_precision": 0.9097744360902256,
+          "arc_set_recall": 0.983739837398374,
+          "arc_set_f1": 0.9453125000000001,
+          "sampled_arc_edit_similarity": 0.46360153256704983,
+          "sampled_arc_count": 261,
+          "reference_arc_count": 123
+        },
+        "hmm": {
+          "n_observations": 1354,
+          "n_reference_aligned": 1354,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9062038404726735,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9955654101995566,
+          "adjacency_pairs": 1353,
+          "arc_set_precision": 0.968,
+          "arc_set_recall": 0.983739837398374,
+          "arc_set_f1": 0.9758064516129032,
+          "sampled_arc_edit_similarity": 0.9029850746268657,
+          "sampled_arc_count": 134,
+          "reference_arc_count": 123
+        }
+      },
+      "unmatched": 0,
+      "resets": 31
+    },
+    {
+      "trip_id": "00000009",
+      "http_status": 200,
+      "request_id": "2e164beb5b154b2181eddcd9d476f496",
+      "observations": 1049,
+      "elapsed_http_and_map_seconds": 1.7547946999548003,
+      "timing": {
+        "features_seconds": 0.03774699999485165,
+        "classifier_seconds": 0.07829670002683997,
+        "decoder_seconds": 0.48621699993964285,
+        "prediction_seconds": 0.6022606999613345,
+        "server_processing_seconds": 1.7215382000431418
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1049,
+          "n_reference_aligned": 1049,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8102955195424214,
+          "candidate_miss_rate_proxy": 0.019065776930409915,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8435114503816794,
+          "adjacency_pairs": 1048,
+          "arc_set_precision": 0.754880694143167,
+          "arc_set_recall": 0.8111888111888111,
+          "arc_set_f1": 0.7820224719101123,
+          "sampled_arc_edit_similarity": 0.6007751937984496,
+          "sampled_arc_count": 516,
+          "reference_arc_count": 429
+        },
+        "hmm": {
+          "n_observations": 1049,
+          "n_reference_aligned": 1049,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8817921830314586,
+          "candidate_miss_rate_proxy": 0.019065776930409915,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.916030534351145,
+          "adjacency_pairs": 1048,
+          "arc_set_precision": 0.8774509803921569,
+          "arc_set_recall": 0.8344988344988346,
+          "arc_set_f1": 0.855436081242533,
+          "sampled_arc_edit_similarity": 0.7342657342657343,
+          "sampled_arc_count": 419,
+          "reference_arc_count": 429
+        }
+      },
+      "unmatched": 0,
+      "resets": 4
+    },
+    {
+      "trip_id": "00000040",
+      "http_status": 200,
+      "request_id": "77a0a4b95f9a4c05b18239d2793700d3",
+      "observations": 2995,
+      "elapsed_http_and_map_seconds": 3.900038200081326,
+      "timing": {
+        "features_seconds": 0.054596300004050136,
+        "classifier_seconds": 0.13092039991170168,
+        "decoder_seconds": 0.8049436999717727,
+        "prediction_seconds": 0.9904603998875245,
+        "server_processing_seconds": 3.835843300097622
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 2995,
+          "n_reference_aligned": 2995,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8701168614357262,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9502338009352037,
+          "adjacency_pairs": 2994,
+          "arc_set_precision": 0.7436548223350253,
+          "arc_set_recall": 0.948220064724919,
+          "arc_set_f1": 0.8335704125177807,
+          "sampled_arc_edit_similarity": 0.3743386243386243,
+          "sampled_arc_count": 756,
+          "reference_arc_count": 309
+        },
+        "hmm": {
+          "n_observations": 2995,
+          "n_reference_aligned": 2995,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9118530884808014,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9819639278557114,
+          "adjacency_pairs": 2994,
+          "arc_set_precision": 0.922360248447205,
+          "arc_set_recall": 0.9611650485436893,
+          "arc_set_f1": 0.9413629160063393,
+          "sampled_arc_edit_similarity": 0.6818181818181819,
+          "sampled_arc_count": 418,
+          "reference_arc_count": 309
+        }
+      },
+      "unmatched": 0,
+      "resets": 17
+    },
+    {
+      "trip_id": "00000052",
+      "http_status": 200,
+      "request_id": "e2fcca04836a47aea6256aa914d98668",
+      "observations": 262,
+      "elapsed_http_and_map_seconds": 0.3965008999221027,
+      "timing": {
+        "features_seconds": 0.009018699987791479,
+        "classifier_seconds": 0.01995890005491674,
+        "decoder_seconds": 0.10692520008888096,
+        "prediction_seconds": 0.13590280013158917,
+        "server_processing_seconds": 0.36363739997614175
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 262,
+          "n_reference_aligned": 262,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9312977099236641,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9348659003831418,
+          "adjacency_pairs": 261,
+          "arc_set_precision": 0.8636363636363636,
+          "arc_set_recall": 0.8,
+          "arc_set_f1": 0.8306010928961749,
+          "sampled_arc_edit_similarity": 0.7263157894736842,
+          "sampled_arc_count": 88,
+          "reference_arc_count": 95
+        },
+        "hmm": {
+          "n_observations": 262,
+          "n_reference_aligned": 262,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9923664122137404,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9616858237547893,
+          "adjacency_pairs": 261,
+          "arc_set_precision": 1.0,
+          "arc_set_recall": 0.8631578947368421,
+          "arc_set_f1": 0.9265536723163842,
+          "sampled_arc_edit_similarity": 0.8631578947368421,
+          "sampled_arc_count": 82,
+          "reference_arc_count": 95
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    },
+    {
+      "trip_id": "00000056",
+      "http_status": 200,
+      "request_id": "08e8b8d098af450db910223945cae34a",
+      "observations": 3958,
+      "elapsed_http_and_map_seconds": 7.5593310000840575,
+      "timing": {
+        "features_seconds": 0.09862579999025911,
+        "classifier_seconds": 0.26006450003478676,
+        "decoder_seconds": 1.865713799954392,
+        "prediction_seconds": 2.224404099979438,
+        "server_processing_seconds": 7.502918799989857
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 3958,
+          "n_reference_aligned": 3941,
+          "alignment_coverage": 0.9957049014653866,
+          "top1_accuracy_proxy": 0.862471453945699,
+          "candidate_miss_rate_proxy": 0.002537427048972342,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.868081880212282,
+          "adjacency_pairs": 3957,
+          "arc_set_precision": 0.8838095238095238,
+          "arc_set_recall": 0.8689138576779026,
+          "arc_set_f1": 0.8762983947119923,
+          "sampled_arc_edit_similarity": 0.5911835748792271,
+          "sampled_arc_count": 1656,
+          "reference_arc_count": 1323
+        },
+        "hmm": {
+          "n_observations": 3958,
+          "n_reference_aligned": 3941,
+          "alignment_coverage": 0.9957049014653866,
+          "top1_accuracy_proxy": 0.9147424511545293,
+          "candidate_miss_rate_proxy": 0.002537427048972342,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9575435936315391,
+          "adjacency_pairs": 3957,
+          "arc_set_precision": 0.9643221202854231,
+          "arc_set_recall": 0.8857677902621723,
+          "arc_set_f1": 0.9233772571986335,
+          "sampled_arc_edit_similarity": 0.8095238095238095,
+          "sampled_arc_count": 1258,
+          "reference_arc_count": 1323
+        }
+      },
+      "unmatched": 0,
+      "resets": 10
+    },
+    {
+      "trip_id": "00000065",
+      "http_status": 200,
+      "request_id": "6a944ad06c724c49860b1d6973937f7c",
+      "observations": 768,
+      "elapsed_http_and_map_seconds": 1.2956590000540018,
+      "timing": {
+        "features_seconds": 0.030372600071132183,
+        "classifier_seconds": 0.056670399964787066,
+        "decoder_seconds": 0.33277119998820126,
+        "prediction_seconds": 0.4198142000241205,
+        "server_processing_seconds": 1.2613323000259697
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 768,
+          "n_reference_aligned": 768,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.7825520833333334,
+          "candidate_miss_rate_proxy": 0.0013020833333333333,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8759791122715405,
+          "adjacency_pairs": 766,
+          "arc_set_precision": 0.7289156626506024,
+          "arc_set_recall": 0.8344827586206897,
+          "arc_set_f1": 0.7781350482315114,
+          "sampled_arc_edit_similarity": 0.37710437710437705,
+          "sampled_arc_count": 297,
+          "reference_arc_count": 145
+        },
+        "hmm": {
+          "n_observations": 768,
+          "n_reference_aligned": 768,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8125,
+          "candidate_miss_rate_proxy": 0.0013020833333333333,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9699738903394256,
+          "adjacency_pairs": 766,
+          "arc_set_precision": 0.920863309352518,
+          "arc_set_recall": 0.8827586206896552,
+          "arc_set_f1": 0.9014084507042254,
+          "sampled_arc_edit_similarity": 0.6923076923076923,
+          "sampled_arc_count": 169,
+          "reference_arc_count": 145
+        }
+      },
+      "unmatched": 0,
+      "resets": 4
+    },
+    {
+      "trip_id": "00000076",
+      "http_status": 200,
+      "request_id": "b0f38da5b1544a1ba6548bdd26892625",
+      "observations": 1486,
+      "elapsed_http_and_map_seconds": 3.2672793000238016,
+      "timing": {
+        "features_seconds": 0.09666869998909533,
+        "classifier_seconds": 0.10790100006852299,
+        "decoder_seconds": 0.9041731999022886,
+        "prediction_seconds": 1.108742899959907,
+        "server_processing_seconds": 3.211764400009997
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1486,
+          "n_reference_aligned": 1486,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.7819650067294751,
+          "candidate_miss_rate_proxy": 0.006729475100942127,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8409703504043127,
+          "adjacency_pairs": 1484,
+          "arc_set_precision": 0.5757575757575758,
+          "arc_set_recall": 0.8128342245989305,
+          "arc_set_f1": 0.6740576496674058,
+          "sampled_arc_edit_similarity": 0.4343891402714932,
+          "sampled_arc_count": 663,
+          "reference_arc_count": 374
+        },
+        "hmm": {
+          "n_observations": 1486,
+          "n_reference_aligned": 1486,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8768506056527591,
+          "candidate_miss_rate_proxy": 0.006729475100942127,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9326145552560647,
+          "adjacency_pairs": 1484,
+          "arc_set_precision": 0.7349397590361446,
+          "arc_set_recall": 0.8155080213903744,
+          "arc_set_f1": 0.7731305449936628,
+          "sampled_arc_edit_similarity": 0.6324200913242009,
+          "sampled_arc_count": 438,
+          "reference_arc_count": 374
+        }
+      },
+      "unmatched": 0,
+      "resets": 2
+    },
+    {
+      "trip_id": "00000077",
+      "http_status": 200,
+      "request_id": "d8dcb3e9ba514b7c95f3660739aa8ebf",
+      "observations": 3911,
+      "elapsed_http_and_map_seconds": 5.365812599891797,
+      "timing": {
+        "features_seconds": 0.10631810000631958,
+        "classifier_seconds": 0.2712273000506684,
+        "decoder_seconds": 1.4192612000042573,
+        "prediction_seconds": 1.7968066000612453,
+        "server_processing_seconds": 5.319090400007553
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 3911,
+          "n_reference_aligned": 3911,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.6254154947583738,
+          "candidate_miss_rate_proxy": 0.002301201738685758,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8959079283887468,
+          "adjacency_pairs": 3910,
+          "arc_set_precision": 0.5482456140350878,
+          "arc_set_recall": 0.9328358208955224,
+          "arc_set_f1": 0.6906077348066298,
+          "sampled_arc_edit_similarity": 0.11907066795740562,
+          "sampled_arc_count": 2066,
+          "reference_arc_count": 268
+        },
+        "hmm": {
+          "n_observations": 3911,
+          "n_reference_aligned": 3911,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.6333418563027359,
+          "candidate_miss_rate_proxy": 0.002301201738685758,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9549872122762149,
+          "adjacency_pairs": 3910,
+          "arc_set_precision": 0.7195467422096318,
+          "arc_set_recall": 0.9477611940298507,
+          "arc_set_f1": 0.818035426731079,
+          "sampled_arc_edit_similarity": 0.23636363636363633,
+          "sampled_arc_count": 1045,
+          "reference_arc_count": 268
+        }
+      },
+      "unmatched": 0,
+      "resets": 19
+    },
+    {
+      "trip_id": "00000091",
+      "http_status": 200,
+      "request_id": "6db5f29cd40543268263c36030bbd9da",
+      "observations": 874,
+      "elapsed_http_and_map_seconds": 1.4160224000224844,
+      "timing": {
+        "features_seconds": 0.150329599971883,
+        "classifier_seconds": 0.06825929996557534,
+        "decoder_seconds": 0.36020770005416125,
+        "prediction_seconds": 0.5787965999916196,
+        "server_processing_seconds": 1.381924799992703
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 874,
+          "n_reference_aligned": 874,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8180778032036613,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8407789232531501,
+          "adjacency_pairs": 873,
+          "arc_set_precision": 0.7427385892116183,
+          "arc_set_recall": 0.771551724137931,
+          "arc_set_f1": 0.7568710359408034,
+          "sampled_arc_edit_similarity": 0.40108401084010836,
+          "sampled_arc_count": 369,
+          "reference_arc_count": 232
+        },
+        "hmm": {
+          "n_observations": 874,
+          "n_reference_aligned": 874,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8432494279176201,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9473081328751431,
+          "adjacency_pairs": 873,
+          "arc_set_precision": 0.8805970149253731,
+          "arc_set_recall": 0.7629310344827587,
+          "arc_set_f1": 0.8175519630484989,
+          "sampled_arc_edit_similarity": 0.5420168067226891,
+          "sampled_arc_count": 238,
+          "reference_arc_count": 232
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    }
+  ]
+}

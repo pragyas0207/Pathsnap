@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "five_models": 5,
+  "whole_trip_cv_folds": 3,
+  "unique_validation_trips": 80,
+  "tpe_trials": 15,
+  "student_test_route_rows": 80,
+  "selected_student_trip_count": 10,
+  "valid_output_lengths_and_arc_ids": true,
+  "reconstructed_parts_are_directed_connected": true,
+  "macro_trip_student_metrics": {
+    "classifier": {
+      "top1_accuracy_proxy": 0.8305500860239278,
+      "strict_adjacency_rate": 0.8994916470322357,
+      "arc_set_f1": 0.7980128408808931,
+      "sampled_arc_edit_similarity": 0.45368987239025954
+    },
+    "hmm": {
+      "top1_accuracy_proxy": 0.8718565066984209,
+      "strict_adjacency_rate": 0.9607681074144706,
+      "arc_set_f1": 0.8838828983693402,
+      "sampled_arc_edit_similarity": 0.6840313467144197
+    }
+  },
+  "development_route_csv_sha256": "ac0683c6aa3b4c8f89b65d472f941be1e61b520c94817460cbfa53992dc86b31",
+  "evaluator_contents_used": false
+}

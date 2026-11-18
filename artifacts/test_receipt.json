@@ -1,0 +1,7 @@
+{
+  "command": "python -m pytest -q",
+  "passed": 14,
+  "failed": 0,
+  "warnings": 1,
+  "log": "artifacts/final_tests.log"
+}

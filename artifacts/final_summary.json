@@ -1,0 +1,20 @@
+{
+  "frozen_model_sha256": "5cb6500bf65c7edb28b71592fc7243e1a00329683317d8f0a14cbb883e173f11",
+  "frozen_model_name": "hist_boost_tuned",
+  "trip_count": 10,
+  "successful_http_requests": 10,
+  "gps_observations": 19674,
+  "aligned_observations": 19674,
+  "alignment_coverage": 1.0,
+  "classifier_top1_macro_trip_proxy": 0.8341002607761074,
+  "hmm_top1_macro_trip_proxy": 0.8689239857627429,
+  "classifier_top1_pooled_proxy": 0.7456541628545288,
+  "hmm_top1_pooled_proxy": 0.7596320016265121,
+  "classifier_strict_adjacency_macro_trip": 0.8949305644605865,
+  "hmm_strict_adjacency_macro_trip": 0.9425537323631596,
+  "mean_http_seconds": 3.2051655399962327,
+  "max_http_seconds": 8.18379979999736,
+  "current_model_and_inference_sources_match_frozen_manifest": true,
+  "physical_second_laptop_tested": false,
+  "final_evaluation_used_for_tuning": false
+}

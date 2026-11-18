@@ -1,0 +1,47 @@
+{
+  "library": "Leaflet",
+  "version": "1.9.3",
+  "license": "BSD-2-Clause",
+  "files": [
+    {
+      "path": "leaflet.js",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/leaflet.js",
+      "sha256": "5819285cec137b229c94e1ee5ad73e8b6b84345a4367d60f75fe477fe0fb7b03"
+    },
+    {
+      "path": "leaflet.css",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/leaflet.css",
+      "sha256": "90b693d86392a4779c861b28cf307e7e59c3fb35328c4d8b95f58f814d38c722"
+    },
+    {
+      "path": "images/layers.png",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/images/layers.png",
+      "sha256": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6"
+    },
+    {
+      "path": "images/layers-2x.png",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/images/layers-2x.png",
+      "sha256": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf"
+    },
+    {
+      "path": "images/marker-icon.png",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
+      "sha256": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437"
+    },
+    {
+      "path": "images/marker-icon-2x.png",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png",
+      "sha256": "00179c4c1ee830d3a108412ae0d294f55776cfeb085c60129a39aa6fc4ae2528"
+    },
+    {
+      "path": "images/marker-shadow.png",
+      "source": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png",
+      "sha256": "264f5c640339f042dd729062cfc04c17f8ea0f29882b538e3848ed8f10edb4da"
+    },
+    {
+      "path": "LICENSE",
+      "source": "https://unpkg.com/leaflet@1.9.3/LICENSE",
+      "sha256": "97c194191510b19c72d25094922821a888d5d9bafb909ea7a38c9bf5b6c40a08"
+    }
+  ]
+}

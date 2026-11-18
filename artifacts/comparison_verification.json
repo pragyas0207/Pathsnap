@@ -1,0 +1,12 @@
+{
+  "models": 5,
+  "cv_folds": 3,
+  "unique_validation_trips": 80,
+  "student_trips_per_model": 10,
+  "student_gps_observations": 19160,
+  "aligned_student_observations": 19143,
+  "classifier_sequence_rows": 50,
+  "pdf_pages": 5,
+  "bayesian_optimization_run": false,
+  "hmm_evaluation_run": false
+}

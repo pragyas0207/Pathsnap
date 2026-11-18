@@ -1,0 +1,19 @@
+{
+  "model_and_sources_match_frozen_manifest": true,
+  "health": {
+    "http://127.0.0.1:8766": {
+      "ready": true,
+      "trip_count": 10
+    },
+    "http://10.1.24.198:8766": {
+      "ready": true,
+      "trip_count": 10
+    }
+  },
+  "localhost_5500_cors_preflight": true,
+  "evaluator_trips_passed": 10,
+  "notebook_cells_executed": 17,
+  "notebook_errors": 0,
+  "packages_integrity_and_input_exclusion_verified": true,
+  "physical_second_laptop_tested": false
+}

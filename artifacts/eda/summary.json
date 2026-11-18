@@ -1,0 +1,40 @@
+{
+  "train": {
+    "trips": 80,
+    "gps_observations": 208417,
+    "gps_rows_min": 361,
+    "gps_rows_max": 19313,
+    "missing_numeric_cells": 0,
+    "one_second_step_fraction": 0.96503741534149,
+    "sampling_quantiles_s": {
+      "min": 0.9999999999998863,
+      "median": 1.0,
+      "p95": 1.0,
+      "p99": 3.0,
+      "max": 153064.0
+    },
+    "gaps_gt_30s": 133,
+    "reference_breaks": 13,
+    "zero_length_arcs": 100,
+    "isolated_nodes_sum_per_trip": 0
+  },
+  "student_test": {
+    "trips": 10,
+    "gps_observations": 19160,
+    "gps_rows_min": 262,
+    "gps_rows_max": 3958,
+    "missing_numeric_cells": 0,
+    "one_second_step_fraction": 0.9862140992167102,
+    "sampling_quantiles_s": {
+      "min": 1.0,
+      "median": 1.0,
+      "p95": 1.0,
+      "p99": 2.0,
+      "max": 210.0
+    },
+    "gaps_gt_30s": 2,
+    "reference_breaks": 1,
+    "zero_length_arcs": 6,
+    "isolated_nodes_sum_per_trip": 0
+  }
+}

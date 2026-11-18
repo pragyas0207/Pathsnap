@@ -1,0 +1,520 @@
+{
+  "scope": "final evaluator inference on this backend laptop; not a physical two-laptop rehearsal",
+  "started_after_freeze": true,
+  "model_sha256": "5cb6500bf65c7edb28b71592fc7243e1a00329683317d8f0a14cbb883e173f11",
+  "completed_utc": "2026-11-18T07:19:08.442320+00:00",
+  "base_url": "http://127.0.0.1:8766",
+  "partition": "evaluator",
+  "results": [
+    {
+      "trip_id": "00000015",
+      "http_status": 200,
+      "request_id": "eb5beb105fc94ccf9bd1e379cb211107",
+      "observations": 6854,
+      "http_seconds": 8.18379979999736,
+      "timing": {
+        "features_seconds": 0.09880410006735474,
+        "classifier_seconds": 0.435869799926877,
+        "decoder_seconds": 2.065058800042607,
+        "prediction_seconds": 2.5997327000368387,
+        "server_processing_seconds": 8.153931300039403
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 6854,
+          "n_reference_aligned": 6854,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.5180916253282755,
+          "candidate_miss_rate_proxy": 0.0014590020426028597,
+          "no_candidate_rate": 0.00014590020426028595,
+          "strict_adjacency_rate": 0.9198890996643806,
+          "adjacency_pairs": 6853,
+          "arc_set_precision": 0.40615384615384614,
+          "arc_set_recall": 0.9705882352941176,
+          "arc_set_f1": 0.5726681127982646,
+          "sampled_arc_edit_similarity": 0.029631305134584895,
+          "sampled_arc_count": 4421,
+          "reference_arc_count": 136
+        },
+        "hmm": {
+          "n_observations": 6854,
+          "n_reference_aligned": 6854,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.4803034724248614,
+          "candidate_miss_rate_proxy": 0.0014590020426028597,
+          "no_candidate_rate": 0.00014590020426028595,
+          "strict_adjacency_rate": 0.9578286881657668,
+          "adjacency_pairs": 6853,
+          "arc_set_precision": 0.41455696202531644,
+          "arc_set_recall": 0.9632352941176471,
+          "arc_set_f1": 0.5796460176991151,
+          "sampled_arc_edit_similarity": 0.08922443376801648,
+          "sampled_arc_count": 1457,
+          "reference_arc_count": 136
+        }
+      },
+      "unmatched": 1,
+      "resets": 219
+    },
+    {
+      "trip_id": "00000017",
+      "http_status": 200,
+      "request_id": "d41539694c8c4ba3b4872417a969397c",
+      "observations": 1346,
+      "http_seconds": 3.521678699995391,
+      "timing": {
+        "features_seconds": 0.26008479995653033,
+        "classifier_seconds": 0.09392700006719679,
+        "decoder_seconds": 0.86582870001439,
+        "prediction_seconds": 1.2198405000381172,
+        "server_processing_seconds": 3.4929537000134587
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1346,
+          "n_reference_aligned": 1346,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8662704309063893,
+          "candidate_miss_rate_proxy": 0.019316493313521546,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8066914498141264,
+          "adjacency_pairs": 1345,
+          "arc_set_precision": 0.8045454545454546,
+          "arc_set_recall": 0.7416201117318436,
+          "arc_set_f1": 0.7718023255813954,
+          "sampled_arc_edit_similarity": 0.5383647798742138,
+          "sampled_arc_count": 723,
+          "reference_arc_count": 795
+        },
+        "hmm": {
+          "n_observations": 1346,
+          "n_reference_aligned": 1346,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9004457652303121,
+          "candidate_miss_rate_proxy": 0.019316493313521546,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8483271375464684,
+          "adjacency_pairs": 1345,
+          "arc_set_precision": 0.8641571194762684,
+          "arc_set_recall": 0.7374301675977654,
+          "arc_set_f1": 0.7957799547852299,
+          "sampled_arc_edit_similarity": 0.6088050314465409,
+          "sampled_arc_count": 641,
+          "reference_arc_count": 795
+        }
+      },
+      "unmatched": 0,
+      "resets": 1
+    },
+    {
+      "trip_id": "00000023",
+      "http_status": 200,
+      "request_id": "edd316624888475592900c6ccbd9cd02",
+      "observations": 458,
+      "http_seconds": 0.7535406000679359,
+      "timing": {
+        "features_seconds": 0.018068399978801608,
+        "classifier_seconds": 0.025109900045208633,
+        "decoder_seconds": 0.1703626000089571,
+        "prediction_seconds": 0.21354090003296733,
+        "server_processing_seconds": 0.725270799943246
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 458,
+          "n_reference_aligned": 458,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9192139737991266,
+          "candidate_miss_rate_proxy": 0.004366812227074236,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9562363238512035,
+          "adjacency_pairs": 457,
+          "arc_set_precision": 0.7205882352941176,
+          "arc_set_recall": 0.8305084745762712,
+          "arc_set_f1": 0.7716535433070865,
+          "sampled_arc_edit_similarity": 0.5822784810126582,
+          "sampled_arc_count": 79,
+          "reference_arc_count": 59
+        },
+        "hmm": {
+          "n_observations": 458,
+          "n_reference_aligned": 458,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9344978165938864,
+          "candidate_miss_rate_proxy": 0.004366812227074236,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9671772428884027,
+          "adjacency_pairs": 457,
+          "arc_set_precision": 0.7647058823529411,
+          "arc_set_recall": 0.8813559322033898,
+          "arc_set_f1": 0.8188976377952756,
+          "sampled_arc_edit_similarity": 0.6621621621621622,
+          "sampled_arc_count": 74,
+          "reference_arc_count": 59
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    },
+    {
+      "trip_id": "00000030",
+      "http_status": 200,
+      "request_id": "566aeebda30943558c763729117fabfb",
+      "observations": 654,
+      "http_seconds": 1.365996600012295,
+      "timing": {
+        "features_seconds": 0.15409980004187673,
+        "classifier_seconds": 0.052616900065913796,
+        "decoder_seconds": 0.35066470003221184,
+        "prediction_seconds": 0.5573814001400024,
+        "server_processing_seconds": 1.3524049000116065
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 654,
+          "n_reference_aligned": 654,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.7553516819571865,
+          "candidate_miss_rate_proxy": 0.03363914373088685,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.7595712098009189,
+          "adjacency_pairs": 653,
+          "arc_set_precision": 0.7401315789473685,
+          "arc_set_recall": 0.6676557863501483,
+          "arc_set_f1": 0.702028081123245,
+          "sampled_arc_edit_similarity": 0.3868421052631579,
+          "sampled_arc_count": 380,
+          "reference_arc_count": 337
+        },
+        "hmm": {
+          "n_observations": 654,
+          "n_reference_aligned": 654,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8302752293577982,
+          "candidate_miss_rate_proxy": 0.03363914373088685,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8652373660030628,
+          "adjacency_pairs": 653,
+          "arc_set_precision": 0.879245283018868,
+          "arc_set_recall": 0.6913946587537092,
+          "arc_set_f1": 0.7740863787375415,
+          "sampled_arc_edit_similarity": 0.5341246290801187,
+          "sampled_arc_count": 300,
+          "reference_arc_count": 337
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    },
+    {
+      "trip_id": "00000049",
+      "http_status": 200,
+      "request_id": "13911a002586427b8818f20309a6ed58",
+      "observations": 2642,
+      "http_seconds": 4.302173800067976,
+      "timing": {
+        "features_seconds": 0.07095130009111017,
+        "classifier_seconds": 0.12098520004656166,
+        "decoder_seconds": 1.0554516999982297,
+        "prediction_seconds": 1.2473882001359016,
+        "server_processing_seconds": 4.269510800018907
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 2642,
+          "n_reference_aligned": 2642,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9644208932626798,
+          "candidate_miss_rate_proxy": 0.0003785011355034065,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9716016660355926,
+          "adjacency_pairs": 2641,
+          "arc_set_precision": 0.874439461883408,
+          "arc_set_recall": 0.9512195121951219,
+          "arc_set_f1": 0.9112149532710279,
+          "sampled_arc_edit_similarity": 0.7440944881889764,
+          "sampled_arc_count": 508,
+          "reference_arc_count": 410
+        },
+        "hmm": {
+          "n_observations": 2642,
+          "n_reference_aligned": 2642,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9829674489023467,
+          "candidate_miss_rate_proxy": 0.0003785011355034065,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9897765997728133,
+          "adjacency_pairs": 2641,
+          "arc_set_precision": 0.9632352941176471,
+          "arc_set_recall": 0.9585365853658536,
+          "arc_set_f1": 0.9608801955990219,
+          "sampled_arc_edit_similarity": 0.9130434782608696,
+          "sampled_arc_count": 414,
+          "reference_arc_count": 410
+        }
+      },
+      "unmatched": 0,
+      "resets": 5
+    },
+    {
+      "trip_id": "00000059",
+      "http_status": 200,
+      "request_id": "90d411a939ef45cea85388ec17f0feb0",
+      "observations": 1031,
+      "http_seconds": 1.90345189999789,
+      "timing": {
+        "features_seconds": 0.05139409995172173,
+        "classifier_seconds": 0.07815469999331981,
+        "decoder_seconds": 0.5018119000596926,
+        "prediction_seconds": 0.6313607000047341,
+        "server_processing_seconds": 1.8745579000096768
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1031,
+          "n_reference_aligned": 1031,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9107662463627546,
+          "candidate_miss_rate_proxy": 0.002909796314258002,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8660194174757282,
+          "adjacency_pairs": 1030,
+          "arc_set_precision": 0.825,
+          "arc_set_recall": 0.7252747252747253,
+          "arc_set_f1": 0.7719298245614036,
+          "sampled_arc_edit_similarity": 0.5802197802197802,
+          "sampled_arc_count": 430,
+          "reference_arc_count": 455
+        },
+        "hmm": {
+          "n_observations": 1031,
+          "n_reference_aligned": 1031,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9466537342386033,
+          "candidate_miss_rate_proxy": 0.002909796314258002,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9106796116504854,
+          "adjacency_pairs": 1030,
+          "arc_set_precision": 0.9173553719008265,
+          "arc_set_recall": 0.7318681318681318,
+          "arc_set_f1": 0.8141809290953546,
+          "sampled_arc_edit_similarity": 0.6879120879120879,
+          "sampled_arc_count": 368,
+          "reference_arc_count": 455
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    },
+    {
+      "trip_id": "00000067",
+      "http_status": 200,
+      "request_id": "27c1471b5608444b8e5113a9f279fbc5",
+      "observations": 916,
+      "http_seconds": 1.3125954000279307,
+      "timing": {
+        "features_seconds": 0.015365400002337992,
+        "classifier_seconds": 0.058842699974775314,
+        "decoder_seconds": 0.30161850003059953,
+        "prediction_seconds": 0.37582660000771284,
+        "server_processing_seconds": 1.3030992000130937
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 916,
+          "n_reference_aligned": 916,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8056768558951966,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9486338797814208,
+          "adjacency_pairs": 915,
+          "arc_set_precision": 0.6761904761904762,
+          "arc_set_recall": 0.8658536585365854,
+          "arc_set_f1": 0.7593582887700534,
+          "sampled_arc_edit_similarity": 0.2142857142857143,
+          "sampled_arc_count": 322,
+          "reference_arc_count": 82
+        },
+        "hmm": {
+          "n_observations": 916,
+          "n_reference_aligned": 916,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8460698689956332,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9868852459016394,
+          "adjacency_pairs": 915,
+          "arc_set_precision": 0.891566265060241,
+          "arc_set_recall": 0.9024390243902439,
+          "arc_set_f1": 0.896969696969697,
+          "sampled_arc_edit_similarity": 0.6346153846153846,
+          "sampled_arc_count": 104,
+          "reference_arc_count": 82
+        }
+      },
+      "unmatched": 0,
+      "resets": 10
+    },
+    {
+      "trip_id": "00000073",
+      "http_status": 200,
+      "request_id": "8915670d0b574734a53f171ade08f938",
+      "observations": 1144,
+      "http_seconds": 1.762618099921383,
+      "timing": {
+        "features_seconds": 0.0445588999427855,
+        "classifier_seconds": 0.0770197999663651,
+        "decoder_seconds": 0.46860310004558414,
+        "prediction_seconds": 0.5901817999547347,
+        "server_processing_seconds": 1.7469649000559002
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1144,
+          "n_reference_aligned": 1144,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9073426573426573,
+          "candidate_miss_rate_proxy": 0.0017482517482517483,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9332161687170475,
+          "adjacency_pairs": 1138,
+          "arc_set_precision": 0.7483221476510067,
+          "arc_set_recall": 0.9409282700421941,
+          "arc_set_f1": 0.8336448598130841,
+          "sampled_arc_edit_similarity": 0.6010928961748634,
+          "sampled_arc_count": 366,
+          "reference_arc_count": 238
+        },
+        "hmm": {
+          "n_observations": 1144,
+          "n_reference_aligned": 1144,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9597902097902098,
+          "candidate_miss_rate_proxy": 0.0017482517482517483,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9771528998242531,
+          "adjacency_pairs": 1138,
+          "arc_set_precision": 0.8928571428571429,
+          "arc_set_recall": 0.9493670886075949,
+          "arc_set_f1": 0.920245398773006,
+          "sampled_arc_edit_similarity": 0.8141263940520447,
+          "sampled_arc_count": 269,
+          "reference_arc_count": 238
+        }
+      },
+      "unmatched": 0,
+      "resets": 7
+    },
+    {
+      "trip_id": "00000087",
+      "http_status": 200,
+      "request_id": "aa2d6caf20da4d88ba84d8396745077a",
+      "observations": 1399,
+      "http_seconds": 3.999537799973041,
+      "timing": {
+        "features_seconds": 0.27216300007421523,
+        "classifier_seconds": 0.08752419997472316,
+        "decoder_seconds": 1.027305299998261,
+        "prediction_seconds": 1.3869925000471994,
+        "server_processing_seconds": 3.968743299948983
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 1399,
+          "n_reference_aligned": 1399,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9263759828448892,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9091559370529327,
+          "adjacency_pairs": 1398,
+          "arc_set_precision": 0.8591836734693877,
+          "arc_set_recall": 0.9252747252747253,
+          "arc_set_f1": 0.8910052910052909,
+          "sampled_arc_edit_similarity": 0.797244094488189,
+          "sampled_arc_count": 508,
+          "reference_arc_count": 455
+        },
+        "hmm": {
+          "n_observations": 1399,
+          "n_reference_aligned": 1399,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.9921372408863474,
+          "candidate_miss_rate_proxy": 0.0,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9899856938483548,
+          "adjacency_pairs": 1398,
+          "arc_set_precision": 1.0,
+          "arc_set_recall": 0.9648351648351648,
+          "arc_set_f1": 0.9821029082774049,
+          "sampled_arc_edit_similarity": 0.9648351648351648,
+          "sampled_arc_count": 439,
+          "reference_arc_count": 455
+        }
+      },
+      "unmatched": 0,
+      "resets": 0
+    },
+    {
+      "trip_id": "00000094",
+      "http_status": 200,
+      "request_id": "7ed0ef9fee1f4a758a5f94e496209c78",
+      "observations": 3230,
+      "http_seconds": 4.946262699901126,
+      "timing": {
+        "features_seconds": 0.06818449997808784,
+        "classifier_seconds": 0.21831460006069392,
+        "decoder_seconds": 1.2196701999055222,
+        "prediction_seconds": 1.506169299944304,
+        "server_processing_seconds": 4.914065300021321
+      },
+      "metrics": {
+        "label_status": "reference-derived monotone alignment proxy; not measured point labels",
+        "classifier": {
+          "n_observations": 3230,
+          "n_reference_aligned": 3230,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.7674922600619195,
+          "candidate_miss_rate_proxy": 0.003405572755417957,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.8782904924125116,
+          "adjacency_pairs": 3229,
+          "arc_set_precision": 0.7068741893644618,
+          "arc_set_recall": 0.902317880794702,
+          "arc_set_f1": 0.7927272727272727,
+          "sampled_arc_edit_similarity": 0.32712082262210795,
+          "sampled_arc_count": 1556,
+          "reference_arc_count": 604
+        },
+        "hmm": {
+          "n_observations": 3230,
+          "n_reference_aligned": 3230,
+          "alignment_coverage": 1.0,
+          "top1_accuracy_proxy": 0.8160990712074303,
+          "candidate_miss_rate_proxy": 0.003405572755417957,
+          "no_candidate_rate": 0.0,
+          "strict_adjacency_rate": 0.9324868380303499,
+          "adjacency_pairs": 3229,
+          "arc_set_precision": 0.7698863636363636,
+          "arc_set_recall": 0.8973509933774835,
+          "arc_set_f1": 0.8287461773700306,
+          "sampled_arc_edit_similarity": 0.5422077922077921,
+          "sampled_arc_count": 924,
+          "reference_arc_count": 604
+        }
+      },
+      "unmatched": 0,
+      "resets": 12
+    }
+  ]
+}

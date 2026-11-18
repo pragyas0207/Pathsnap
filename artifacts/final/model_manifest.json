@@ -1,0 +1,51 @@
+{
+  "frozen_utc": "2026-11-18T07:15:26.136400+00:00",
+  "model_name": "hist_boost_tuned",
+  "model_sha256": "5cb6500bf65c7edb28b71592fc7243e1a00329683317d8f0a14cbb883e173f11",
+  "trained_partition": "train",
+  "candidate_config": {
+    "radius_m": 60.0,
+    "max_candidates": 8,
+    "gap_seconds": 30.0
+  },
+  "decoder_config": {
+    "beta_m": 30.0,
+    "max_speed_mps": 60.0,
+    "slack_m": 30.0,
+    "gap_seconds": 30.0
+  },
+  "features": [
+    "distance_m",
+    "heading_cos",
+    "heading_known",
+    "log_length_m",
+    "fraction",
+    "speed_mps",
+    "dt_prev_s",
+    "gps_step_m",
+    "distance_rank",
+    "candidate_count",
+    "from_outdegree",
+    "to_outdegree"
+  ],
+  "fit_stride": 5,
+  "seed": 42,
+  "tuning_summary_sha256": "36383d39ddc9e8d0a36cb0dc0780f7062ebc55ae44820cab8dd64ad5e3a04f1f",
+  "student_route_evaluation_sha256": "ac0683c6aa3b4c8f89b65d472f941be1e61b520c94817460cbfa53992dc86b31",
+  "processed_manifest_sha256": "5e8133c81dd5b412150276f0e3c72452f0f0475541bda8975f95c39e55e63183",
+  "requirements_lock_sha256": "9626e5323ec75ca4ae092539a810ea379daf89e2b8a39a9037e36fc882eb22dd",
+  "selection_scope": "training-trip CV only; student trips for development diagnostics; no evaluator contents read",
+  "inference_source_sha256": {
+    "src/pathsnap/__init__.py": "c025fcdf26b26761eebbb991120833999ea8978dbe57924d240176c288b5b60e",
+    "src/pathsnap/io.py": "39157a48bb9ddff7637627b9591513c356d104e31b5850a3ab6cb52204caca3e",
+    "src/pathsnap/geo.py": "bdbd81e7603e5465db5700d06687d53ed47210ab664a8bf87d47dea17c224d7a",
+    "src/pathsnap/candidates.py": "8ab4dc682cbb5a7e385fcfa5aebbe368b7340d9b988503b56497abe6b2686d94",
+    "src/pathsnap/decoder.py": "27fff2d097480221d740997ac74cf1a997e325188deafebacb29f9e90fbc9bda",
+    "src/pathsnap/reconstruct.py": "228004afdd002e93d00c6f955ac25d56da60cbfa8fdac0e24685b9b0ee2fadbd",
+    "src/pathsnap/pipeline.py": "eef04118b31b87943dec2104c1d23cefa9f3d2a2f2cd1880c96b4d0146d497fb",
+    "src/pathsnap/maps.py": "3b7f0f252850a48bbff63596a22af0cafd0426057c6d1bdff1532ed237966c82",
+    "src/pathsnap/api.py": "509ab2601f374764c8e41f377319c820d04f197c18cd7d697f18e0396d80dc8b",
+    "src/pathsnap/reference.py": "c1b40dcef679554b6c7c67c450011887ea7e96d44995ca60dcfd97edd0ed4e3c",
+    "src/pathsnap/metrics.py": "c9b0b8502683011defde108921ca4c72305e13e106fd84c0b8312c902eeea3a9"
+  }
+}
