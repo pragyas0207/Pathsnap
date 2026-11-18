@@ -17,7 +17,7 @@ See [the backend handoff](docs/BACKEND_HANDOFF.md) for Laptop 2, CORS, firewall/
 
 The evaluator inputs are private under `data/evaluation_server/`. They are not part of the frontend package or source release. The interface gets only predicted routes and aggregate scores. References are read for scoring only after the prediction pipeline finishes.
 
-## Actual outputs
+## Actual outputs:
 
 - `notebooks/PathSnap_final_demo.ipynb`: editable code, baseline data/features, five-model tables, actual TPE history, HMM comparison, final evaluator results and a fresh backend request/map.
 - `artifacts/model_comparison.csv`: original five-model comparison.
