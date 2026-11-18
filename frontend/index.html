@@ -1,50 +1,317 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1d2b3a">
   <title>PathSnap | Route reconstruction</title>
   <style>
-    :root{font-family:Inter,system-ui,sans-serif;color:#16302c;background:#f2f6f4}
-    *{box-sizing:border-box}body{margin:0}header{padding:26px 5%;background:#123f37;color:white;display:flex;justify-content:space-between;align-items:center}
-    h1{font-size:28px;letter-spacing:-1px;margin:0}header p{margin:4px 0 0;color:#bad8cb;font-size:13px}.badge{border:1px solid #77b9a5;border-radius:20px;padding:7px 12px;font-size:12px}
-    main{max-width:1450px;margin:auto;padding:30px 5%}.layout{display:grid;grid-template-columns:310px 1fr;gap:22px}.card{background:white;border:1px solid #dce5df;border-radius:14px;padding:22px;box-shadow:0 5px 20px #143c2b05}
-    h2{font-size:18px;margin:0 0 20px}label{display:block;font-size:12px;font-weight:650;margin:18px 0 7px;color:#4e675f}input,select,button{font:inherit;width:100%;border:1px solid #cedbd3;border-radius:7px;padding:11px}input{font-size:13px}button{background:#196b53;color:white;border:0;cursor:pointer;margin-top:14px;font-weight:600}button.secondary{background:#eef5f1;color:#196b53}button:disabled{opacity:.5;cursor:wait}
-    .note{font-size:12px;color:#657970;line-height:1.6}#status{margin:18px 0;font-size:13px;line-height:1.6;white-space:pre-wrap}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.stat{padding:18px;background:white;border:1px solid #dce5df;border-radius:12px}.stat span{display:block;font-size:11px;color:#657970}.stat strong{font-size:24px;display:block;margin:7px 0}.stat small{font-size:10px;color:#657970}
-    iframe{width:100%;height:540px;border:0;border-radius:12px;background:#e8efeb}.mapcard{padding:0;overflow:hidden}.maphead{padding:17px 22px;border-bottom:1px solid #dce5df;font-size:13px;font-weight:600}.placeholder{padding:90px 35px;text-align:center;line-height:1.8;color:#6a7f75}details{margin-top:20px;font-size:12px}pre{max-height:350px;overflow:auto;white-space:pre-wrap;background:#eaf1ed;padding:15px;border-radius:8px;font-size:11px}
-    .layout>*{min-width:0}.stat{min-width:0}pre{overflow-wrap:anywhere}
-    @media(max-width:850px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}header .badge{display:none}iframe{height:440px}}
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #202b35;
+      background: #f3f0eb;
+      --ink: #1d2b3a;
+      --muted: #6d716f;
+      --faint: #96958e;
+      --line: #dedbd4;
+      --surface: #ffffff;
+      --surface-soft: #f8f6f2;
+      --accent: #b45d42;
+      --accent-dark: #91452f;
+      --accent-pale: #f4e5dd;
+      --error: #a14136;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: #f3f0eb; }
+    button, input, select { font: inherit; }
+    button, select, input { outline: none; }
+    button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible {
+      box-shadow: 0 0 0 3px #a8d4c2;
+    }
+
+    .topbar {
+      min-height: 76px;
+      padding: 18px clamp(20px, 5vw, 72px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #f7f8f7;
+      background: var(--ink);
+      border-bottom: 1px solid #344352;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: #f1b39c;
+      border: 1px solid #9a6a5a;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    h1 { margin: 0; font-size: 20px; letter-spacing: -.03em; }
+    .topbar p { margin: 3px 0 0; color: #b8c0c6; font-size: 12px; }
+    .badge {
+      padding: 7px 10px;
+      color: #f1c0ae;
+      border: 1px solid #76584e;
+      border-radius: 999px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    main { max-width: 1480px; margin: 0 auto; padding: 32px clamp(20px, 5vw, 72px) 48px; }
+    .intro { margin-bottom: 24px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .intro h2 { margin: 0; font-size: clamp(24px, 3vw, 34px); letter-spacing: -.04em; font-weight: 650; }
+    .intro p { max-width: 620px; margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); align-items: start; gap: 24px; }
+    .panel, .stat, .map-card, .response {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(50, 42, 33, .05);
+    }
+    .control-panel { padding: 20px; }
+    .control-panel h3 { margin: 0; font-size: 16px; letter-spacing: -.02em; }
+    .control-panel > .note { margin: 7px 0 22px; }
+    label { display: block; margin: 18px 0 7px; color: var(--muted); font-size: 11px; font-weight: 650; }
+    input, select {
+      width: 100%;
+      min-height: 42px;
+      padding: 10px 11px;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid #cbd5ce;
+      border-radius: 7px;
+      font-size: 13px;
+    }
+    input:focus, select:focus { border-color: #c98770; }
+    button {
+      width: 100%;
+      min-height: 42px;
+      margin-top: 12px;
+      padding: 10px 13px;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 650;
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+    button:hover:not(:disabled) { background: var(--accent-dark); border-color: var(--accent-dark); }
+    button:active:not(:disabled) { transform: translateY(1px); }
+    button.secondary { color: var(--accent-dark); background: var(--accent-pale); border-color: #e3c2b5; }
+    button.secondary:hover:not(:disabled) { background: #eed8ce; border-color: #d5a28f; }
+    button:disabled { opacity: .48; cursor: wait; }
+    .note { color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .status-box {
+      min-height: 66px;
+      margin: 18px 0 20px;
+      padding: 11px 12px;
+      color: #3e4d46;
+      background: var(--surface-soft);
+      border-left: 3px solid #cf856b;
+      border-radius: 6px;
+      font-size: 12px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+    .disclaimer { padding-top: 16px; border-top: 1px solid var(--line); }
+    .disclaimer + .disclaimer { margin-top: 10px; padding-top: 0; border-top: 0; }
+
+    .results { min-width: 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .stat { min-width: 0; padding: 16px; }
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .stat strong {
+      display: block;
+      margin: 10px 0 5px;
+      color: var(--ink);
+      font-size: clamp(23px, 3vw, 30px);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -.04em;
+      font-weight: 650;
+    }
+    .stat small { color: var(--faint); font-size: 11px; }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+    .metric {
+      padding: 12px 14px;
+      background: #faf9f6;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .metric span { display: block; color: var(--faint); font-size: 10px; line-height: 1.4; }
+    .metric strong { display: block; margin-top: 5px; color: var(--ink); font-size: 18px; font-variant-numeric: tabular-nums; }
+    .metric-note {
+      margin: -8px 0 16px;
+      color: var(--faint);
+      font-size: 10px;
+      line-height: 1.5;
+    }
+    .map-card { overflow: hidden; }
+    .map-head {
+      min-height: 58px;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    #tripLabel { color: var(--muted); font-size: 11px; font-weight: 400; }
+    iframe { display: block; width: 100%; height: 560px; border: 0;     background: #ece9e2; }
+    .placeholder {
+      min-height: 560px;
+      padding: 40px;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .placeholder-icon {
+      width: 46px;
+      height: 46px;
+      margin-bottom: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      background: var(--accent-pale);
+      border-radius: 50%;
+      font-size: 21px;
+    }
+    .placeholder b { color: var(--ink); font-size: 14px; font-weight: 650; }
+    .response { margin-top: 16px; overflow: hidden; }
+    summary { padding: 14px 16px; color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 600; }
+    pre {
+      max-height: 350px;
+      margin: 0;
+      padding: 16px;
+      overflow: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      color: #405049;
+      background: var(--surface-soft);
+      border-top: 1px solid var(--line);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+    @media (max-width: 850px) {
+      .layout { grid-template-columns: 1fr; }
+      .control-panel { position: static; }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      iframe, .placeholder { min-height: 440px; height: 440px; }
+    }
+    @media (max-width: 560px) {
+      .topbar { align-items: flex-start; }
+      .badge { display: none; }
+      main { padding-top: 24px; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { padding: 14px; }
+      .stat strong { margin-top: 6px; }
+      .map-head { align-items: flex-start; flex-direction: column; gap: 4px; }
+    }
   </style>
 </head>
 <body>
-<header><div><h1>PathSnap<span style="color:#82c9a9">.</span></h1><p>GPS map matching & route reconstruction</p></div><span class="badge" id="partition">Connect to backend</span></header>
-<main><div class="layout">
-  <aside class="card"><h2>Reconstruct a trip</h2><p class="note">Choose a trip and run the model on the API laptop.</p>
-    <label for="api">Backend address</label><input id="api" value="http://127.0.0.1:8766" spellcheck="false">
-    <button class="secondary" id="connect">Connect & load trips</button>
-    <label for="trip">Trip</label><select id="trip" disabled><option>Connect first</option></select>
-    <button id="run" disabled>Match route</button><div id="status" role="status">Ready to connect.</div>
-    <p class="note">Pointwise scores use labels estimated from the supplied reference route. They are alignment proxies, not independently measured GPS-point ground truth.</p>
-    <p class="note">Reference routes stay on the backend. Maps display observations, road geometry and predictions.</p>
-  </aside>
-  <section><div class="stats">
-    <div class="stat"><span>HMM TOP-1 · PROXY</span><strong id="accuracy">—</strong><small id="coverage">Reference alignment coverage</small></div>
-    <div class="stat"><span>STRICT ADJACENCY</span><strong id="continuity">—</strong><small>Same arc or direct next arc</small></div>
-    <div class="stat"><span>INFERENCE TIME</span><strong id="latency">—</strong><small>Features + classifier + decoder</small></div>
-  </div><div class="card mapcard"><div class="maphead">Road matches <span style="float:right;font-weight:400;color:#6a7f75" id="tripLabel">No trip selected</span></div>
-    <div id="empty" class="placeholder"><b>Your matched route appears here.</b><br>Connect to Laptop 1, select a trip, and run inference.</div>
-    <iframe id="map" title="Predicted route map" hidden></iframe></div>
-    <details><summary>API response and request ID</summary><pre id="response">No request sent yet.</pre></details>
-  </section>
-</div></main>
-<script src="config.js"></script>
-<script>
-const $=id=>document.getElementById(id);const percent=v=>v==null?'N/A':(100*v).toFixed(1)+'%';
-const queryApi=new URLSearchParams(location.search).get('api');
-const ownBackend=location.pathname.startsWith('/ui/')?location.origin:null;
-const remembered=localStorage.getItem('pathsnapApi');
-$('api').value=queryApi||ownBackend||window.PATHSNAP_DEFAULT_API||remembered||'http://127.0.0.1:8766';
-function base(){const u=new URL($('api').value);if(!['http:','https:'].includes(u.protocol))throw Error('Use an HTTP or HTTPS backend address');return u.origin;}
-async function call(path,options){const res=await fetch(base()+path,options);const body=await res.json();if(!res.ok)throw Error(typeof body.detail==='string'?body.detail:JSON.stringify(body.detail));return body;}
-$('connect').onclick=async()=>{ $('connect').disabled=true;$('run').disabled=true;$('status').textContent='Connecting…';try{const data=await call('/trips');$('trip').replaceChildren(...data.trips.map(id=>new Option(id,id)));$('trip').disabled=!data.trips.length;$('run').disabled=!data.trips.length;$('partition').textContent=data.partition==='student_test'?'Student-test development':'Reserved evaluator trips';$('status').textContent=data.trips.length+' trips available. '+data.notice;localStorage.setItem('pathsnapApi',base());}catch(e){$('status').textContent='Connection failed: '+e.message+'\nCheck backend address, Wi-Fi, firewall and CORS origin.';}finally{$('connect').disabled=false;}};
-$('run').onclick=async()=>{ $('run').disabled=true;$('connect').disabled=true;$('status').textContent='Running candidate generation, classifier and Viterbi…';try{const r=await call('/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trip_id:$('trip').value})});const m=r.metrics?.hmm;$('accuracy').textContent=percent(m?.top1_accuracy_proxy);$('coverage').textContent=m?'Aligned: '+percent(m.alignment_coverage):'No reference available';$('continuity').textContent=percent(m?.strict_adjacency_rate);$('latency').textContent=r.timing.prediction_seconds.toFixed(2)+' s';$('tripLabel').textContent='Trip '+r.trip_id;$('empty').hidden=true;$('map').hidden=false;$('map').src=base()+r.map_path;$('response').textContent=JSON.stringify(r,null,2);$('status').textContent='Completed '+r.observations+' observations.\nClassifier Top-1 proxy: '+percent(r.metrics?.classifier?.top1_accuracy_proxy)+'\nUnmatched: '+r.unmatched_observations+' · sequence resets: '+r.decoder_resets.length+'\nRequest '+r.request_id+(r.scoring_error?'\nScoring unavailable: '+r.scoring_error:'');}catch(e){$('status').textContent='Inference failed: '+e.message;}finally{$('run').disabled=false;$('connect').disabled=false;}};
-</script></body></html>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">⌁</div>
+      <div><h1>PathSnap</h1><p>GPS map matching and route reconstruction</p></div>
+    </div>
+    <span class="badge" id="partition">Connect to backend</span>
+  </header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow">Route analysis</p>
+      <h2>Reconstruct a trip from GPS observations</h2>
+      <p>Connect to the inference backend, choose a trip, and inspect its predicted road path and alignment metrics.</p>
+    </div>
+    <div class="layout">
+      <aside class="panel control-panel">
+        <h3>Run inference</h3>
+        <p class="note">The model runs on the connected API laptop.</p>
+        <label for="api">Backend address</label>
+        <input id="api" value="http://127.0.0.1:8766" spellcheck="false" aria-describedby="connection-help">
+        <button class="secondary" id="connect">Connect and load trips</button>
+        <label for="trip">Trip</label>
+        <select id="trip" disabled><option>Connect first</option></select>
+        <button id="run" disabled>Match route</button>
+        <div class="status-box" id="status" role="status" aria-live="polite">Ready to connect.</div>
+        <p class="note disclaimer" id="connection-help">Pointwise scores use labels estimated from the supplied reference route. They are alignment proxies, not independently measured GPS-point ground truth.</p>
+        <p class="note disclaimer">Reference routes stay on the backend. Maps display observations, road geometry and predictions.</p>
+      </aside>
+      <section class="results" aria-label="Route results">
+        <div class="stats">
+          <div class="stat"><span>HMM top-1 · proxy</span><strong id="accuracy">—</strong><small id="coverage">Reference alignment coverage</small></div>
+          <div class="stat"><span>Strict adjacency</span><strong id="continuity">—</strong><small>Same arc or direct next arc</small></div>
+          <div class="stat"><span>Inference time</span><strong id="latency">—</strong><small>Features, classifier, and decoder</small></div>
+        </div>
+        <div class="metric-grid" aria-label="Route sequence metrics">
+          <div class="metric"><span>Accuracy · Top-1 proxy</span><strong id="metricAccuracy">—</strong></div>
+          <div class="metric"><span>Arc-set F1</span><strong id="metricF1">—</strong></div>
+          <div class="metric"><span>Arc-set recall</span><strong id="metricRecall">—</strong></div>
+          <div class="metric"><span>Arc-set precision</span><strong id="metricPrecision">—</strong></div>
+        </div>
+        <p class="metric-note">Accuracy is reference-aligned point agreement. Arc-set F1, recall, and precision compare unordered predicted and reference arc sets; they are not independently measured route ground truth.</p>
+        <div class="map-card">
+          <div class="map-head"><span>Road matches</span><span id="tripLabel">No trip selected</span></div>
+          <div id="empty" class="placeholder">
+            <div class="placeholder-icon" aria-hidden="true">⌁</div>
+            <div><b>Your matched route appears here</b><br>Connect to the backend, select a trip, and run inference.</div>
+          </div>
+          <iframe id="map" title="Predicted route map" hidden></iframe>
+        </div>
+        <details class="response">
+          <summary>API response and request ID</summary>
+          <pre id="response">No request sent yet.</pre>
+        </details>
+      </section>
+    </div>
+  </main>
+  <script src="config.js"></script>
+  <script>
+    const $=id=>document.getElementById(id);const percent=v=>v==null?'N/A':(100*v).toFixed(1)+'%';
+    const queryApi=new URLSearchParams(location.search).get('api');
+    const ownBackend=location.pathname.startsWith('/ui/')?location.origin:null;
+    const remembered=localStorage.getItem('pathsnapApi');
+    $('api').value=queryApi||ownBackend||window.PATHSNAP_DEFAULT_API||remembered||'http://127.0.0.1:8766';
+    function base(){const u=new URL($('api').value);if(!['http:','https:'].includes(u.protocol))throw Error('Use an HTTP or HTTPS backend address');return u.origin;}
+    async function call(path,options){const res=await fetch(base()+path,options);const body=await res.json();if(!res.ok)throw Error(typeof body.detail==='string'?body.detail:JSON.stringify(body.detail));return body;}
+    $('connect').onclick=async()=>{ $('connect').disabled=true;$('run').disabled=true;$('status').textContent='Connecting…';try{const data=await call('/trips');$('trip').replaceChildren(...data.trips.map(id=>new Option(id,id)));$('trip').disabled=!data.trips.length;$('run').disabled=!data.trips.length;$('partition').textContent=data.partition==='student_test'?'Student-test development':'Reserved evaluator trips';$('status').textContent=data.trips.length+' trips available. '+data.notice;localStorage.setItem('pathsnapApi',base());}catch(e){$('status').textContent='Connection failed: '+e.message+'\nCheck backend address, Wi-Fi, firewall and CORS origin.';}finally{$('connect').disabled=false;}};
+    $('run').onclick=async()=>{ $('run').disabled=true;$('connect').disabled=true;$('status').textContent='Running candidate generation, classifier and Viterbi…';try{const r=await call('/match',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({trip_id:$('trip').value})});const m=r.metrics?.hmm;$('accuracy').textContent=percent(m?.top1_accuracy_proxy);$('metricAccuracy').textContent=percent(m?.top1_accuracy_proxy);$('coverage').textContent=m?'Aligned: '+percent(m.alignment_coverage):'No reference available';$('continuity').textContent=percent(m?.strict_adjacency_rate);$('metricF1').textContent=percent(m?.arc_set_f1);$('metricRecall').textContent=percent(m?.arc_set_recall);$('metricPrecision').textContent=percent(m?.arc_set_precision);$('latency').textContent=r.timing.prediction_seconds.toFixed(2)+' s';$('tripLabel').textContent='Trip '+r.trip_id;$('empty').hidden=true;$('map').hidden=false;$('map').src=base()+r.map_path;$('response').textContent=JSON.stringify(r,null,2);$('status').textContent='Completed '+r.observations+' observations.\nClassifier Top-1 proxy: '+percent(r.metrics?.classifier?.top1_accuracy_proxy)+'\nUnmatched: '+r.unmatched_observations+' · sequence resets: '+r.decoder_resets.length+'\nRequest '+r.request_id+(r.scoring_error?'\nScoring unavailable: '+r.scoring_error:'');}catch(e){$('status').textContent='Inference failed: '+e.message;}finally{$('run').disabled=false;$('connect').disabled=false;}};
+  </script>
+</body>
+</html>
